@@ -2,6 +2,13 @@ import React from 'react';
 import './search.css'
 
 export class SearchSection extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { gptQuery: new String };
+    }
+
+
     render() {
         return (
             <section className='searchBackground'>
