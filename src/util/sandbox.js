@@ -14,7 +14,6 @@
 //     })
 // }
 
-
 // const callback = r => {
 //     //remove loading spinner
 //     /// Do stuff with response HERE
@@ -38,8 +37,9 @@ const callback = r => {
     var result = r;
 
     //add react obj to screen
-    console.log(result);
+    console.log(parse.responseParse(result));
 }
 
-chatGPT.getLesson(callback, "golf");
+asynchronousFunction(callback)
 console.log("loading...");
+// add loading spinner
