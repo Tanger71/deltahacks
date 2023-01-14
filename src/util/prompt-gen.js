@@ -22,7 +22,7 @@ exports.generate = function (topic) {
 
     var prompt = "";
     prompt += "How would I teach someone to ";
-    prompt += topic
+    prompt += topic;
     prompt += " in steps?";
 
     return prompt;
