@@ -1,0 +1,15 @@
+
+.replyBackground {
+    min-height: 20vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.replySection {
+
+    width: 40vw;
+
+}
