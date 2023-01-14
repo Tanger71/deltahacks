@@ -1,6 +1,15 @@
 ///intTest
 
 const api_wrapper= require('./api_wrapper.js');
-api_wrapper.queryChatGPT().then(res => {
-    console.log(res);
+
+const lessonPlan = api_wrapper.queryChatGPT().then(res => {
+    return res;
 });
+
+const printedLessonPlan = function() {
+    lessonPlan.then((res) => {
+        console.log(res);
+    });
+}
+
+console.log(printedLessonPlan);
