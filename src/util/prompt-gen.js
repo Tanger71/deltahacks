@@ -6,8 +6,7 @@ function checkTopic(topic){
     return 0;
 }
 
-
-function checkvalid (topic) {
+function checkValid (topic) {
     if (checkChars(topic)) throw new Error('Invalid Chars');
     if (checkTopic(topic)) throw new Error('Invalid topic');
 }
@@ -19,10 +18,12 @@ function checkvalid (topic) {
  * @returns str that is prompt
  */
 exports.generate = function (topic) {
-    var prompt = "How would I teach someone to ";
+    checkValid(topic);
 
-    checkvalid(topic);
+    var prompt = "";
+    prompt += "How would I teach someone to ";
+    prompt += topic;
+    prompt += " in steps?";
 
-    prompt += topic + "?";
     return prompt;
 }
