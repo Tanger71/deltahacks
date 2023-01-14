@@ -2,9 +2,13 @@
 import './App.css';
 
 import { SearchSection } from './sections/search';
-import { ReplySection } from './sections/reply';
+import ReplySection from './sections/reply';
+import { useState } from 'react';
 
-function App() {
+export default function App() {
+  const [pageState, setPageState] = useState();
+  const [dataState, setDataState] = useState({});
+
   return (
     <div className="App">
       <div className='Content'>
@@ -14,5 +18,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

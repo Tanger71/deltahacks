@@ -1,7 +1,7 @@
 import React from 'react';
 import './reply.css'
 
-export const ReplySection = () => {
+export default function ReplySection(){
 
     return (
         <section className='replyBackground'>
