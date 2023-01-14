@@ -1,4 +1,3 @@
-///intTest
 var api = require('./api_wrapper');
 
 const asynchronousFunction = callback => {
@@ -9,14 +8,15 @@ const asynchronousFunction = callback => {
 
 
 const callback = r => {
+    //remove loading spinner
+    /// Do stuff with response HERE
     var result = r;
+
+    //add react obj to screen
     console.log(result);
-    //stop loading and display result
 }
 
 asynchronousFunction(callback)
 console.log("loading...");
-
-
-
+// add loading spinner
 
