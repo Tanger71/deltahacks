@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "modtest": "node src/util/intTest.js"
+    "sandbox": "node src/util/sandbox.js"
   },
   "eslintConfig": {
     "extends": [

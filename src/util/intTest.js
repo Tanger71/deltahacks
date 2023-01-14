@@ -1,3 +1,0 @@
-///intTest
-
-console.log("yeo");
