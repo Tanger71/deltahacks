@@ -1,15 +1,21 @@
-///intTest
+var api = require('./api_wrapper');
 
-const api_wrapper= require('./api_wrapper.js');
-
-const lessonPlan = api_wrapper.queryChatGPT().then(res => {
-    return res;
-});
-
-const printedLessonPlan = function() {
-    lessonPlan.then((res) => {
-        console.log(res);
+const asynchronousFunction = callback => {
+    return api.queryChatGPT().then(response => {
+        callback(response);
     });
 }
 
-console.log(printedLessonPlan);
+
+const callback = r => {
+    //remove loading spinner
+    /// Do stuff with response HERE
+    var result = r;
+
+    //add react obj to screen
+    console.log(result);
+}
+
+asynchronousFunction(callback)
+console.log("loading...");
+// add loading spinner
