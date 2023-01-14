@@ -1,10 +1,22 @@
 ///intTest
-
 var api = require('./api_wrapper');
 
-api.queryChatGPT().then(r => { 
-    console.log(r.data.choices[0].text); 
-});
+const asynchronousFunction = callback => {
+    return api.queryChatGPT().then(response => {
+      callback(response)
+    })
+}
 
 
-console.log("yeo");
+const callback = r => {
+    var result = r;
+    console.log(result);
+    //stop loading and display result
+}
+
+asynchronousFunction(callback)
+console.log("loading...");
+
+
+
+

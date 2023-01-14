@@ -1,24 +1,23 @@
-const { Configuration, OpenAIApi } = require("openai");
+const { Configuration, openAIApi, OpenAIApi } = require("openai");
 require('dotenv').config();
 
-console.log(JSON.stringify(process.env.OPEN_AI_APIKEY));
-
 const configuration = new Configuration({
-   apiKey: process.env.OPEN_AI_APIKEY,
+    apiKey: process.env.OPEN_AI_APIKEY,
 });
-
 const openai = new OpenAIApi(configuration);
 
 exports.queryChatGPT = async function() {
-    const response = await openai.createCompletion({
+    let topic = "swim";
+
+    const gptResponse = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: "how do i teach someone golfing?",
+        prompt: `How would I teach someone to ${topic}?`,
         temperature: 0.7,
-        max_tokens: 256,
+        max_tokens: 2048,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
-    });
+    })
 
-    return response;
+    return gptResponse["data"]["choices"][0]["text"];
 }
