@@ -20,4 +20,5 @@ exports.queryChatGPT = async function() {
     })
 
     return gptResponse["data"]["choices"][0]["text"];
+
 }
