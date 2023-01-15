@@ -36,7 +36,7 @@ export default function ReplySection({ dataState, setDataState, setPageState, to
                 {dataState.map((data, index) => (
                     <div key={index + 1} className='replyStep' ref={messageRef}>
                         {/* <>{data.prompt}</> */}
-                        <p style={{fontFamily:"Comic Sans MS"}}>Query {index + 1} </p>
+                        <p style={{fontFamily:"Roboto"}}>Query {index + 1} </p>
                         {data.list.map((dataString, index) => (
                             <Fade direction='up' cascade delay={500 + index * 250} triggerOnce={true}>
                                 <div className='replySingleText' key={(1 + index) * 10} onClick={() => getStep(callback, topic, dataString)} >

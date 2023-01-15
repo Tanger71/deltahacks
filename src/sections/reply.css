@@ -20,11 +20,12 @@
     /* border: 2px solid blue; */
 
     background: rgba(218, 223, 225);
-    opacity: 0.75;
+    opacity: 0.85;
     border-radius: 20px;
-    width: 60vw;
-
-    overflow: scroll;
+    width: 90vw;
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
     
     font-size: 1.6em;
 
