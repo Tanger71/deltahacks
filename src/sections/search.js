@@ -61,7 +61,7 @@ export default function SearchSection({setDataState, setTopic}) {
         setTopic(e.target[0].value);
         console.log("handle sub 2")
 
-        
+        setDataState([])
     }
 
     // /^[a-zA-Z' ]+$/
