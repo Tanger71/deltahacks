@@ -1,7 +1,7 @@
 function checkChars(topic) {
-    if (!topic) {throw new Error("User cannot input an empty string.")}
-    const allowedChars = new RegExp(/^[A-Za-z]+$/);
-    if (allowedChars.test(topic)) {throw new Error("User used invalid characters.")}
+    //if (!topic) {throw new Error("User cannot input an empty string.")}
+    let allowedChars = /^[a-z]+$/i.test(topic);
+    if (allowedChars) {throw new Error("User used invalid characters.")}
     return 0;
 }
 
