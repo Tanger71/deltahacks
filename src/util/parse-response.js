@@ -1,4 +1,4 @@
-responseParse = function(input) {
+function responseParse (input) {
     const steps = input.split('\n');
 
     const filteredSteps = steps.filter(sentence => sentence != '');

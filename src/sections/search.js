@@ -1,5 +1,7 @@
-import React , { useState }from 'react';
+import React, { useState } from 'react';
 import './search.css'
+
+import SearchIcon from '@mui/icons-material/Search';
 
 var chatGPT = require('../util/chatGPT');
 
@@ -29,7 +31,7 @@ var chatGPT = require('../util/chatGPT');
 //     }
 // }
 
-export default function SearchSection({setDataState}) {
+export default function SearchSection({ setDataState }) {
 
     const [gptQuery, setgptQuery] = useState("");
 
@@ -44,7 +46,7 @@ export default function SearchSection({setDataState}) {
         console.log(result)
         setDataState(dataState => [...dataState, result])
     }
-    
+
     function handleSubmit(e) {
         console.log("handle sub 1")
 
@@ -54,20 +56,35 @@ export default function SearchSection({setDataState}) {
 
         console.log("handle sub 2")
     }
-    
+
     console.log("end initial")
 
     return (
         <section className='searchBackground'>
             <div className='searchSection'>
-                {/* <form onSubmit={e => handleSubmit(e)}> */}
-                <form onSubmit={ e => handleSubmit(e)}>
+                <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css"/>
+
+                {/* <form onSubmit={e => handleSubmit(e)}>
                     <label>
                         I want to teach:
-                        <input type="text" name="GPTquery"/>
+                        <input type="text" name="GPTquery" />
                     </label>
                     <input type="submit" value="Submit" />
-                </form>
+                </form> */}
+
+                <div className="searchbox">
+                    <form name="search" onSubmit={e => handleSubmit(e)}>
+                        <label>
+                            I want to teach:
+                            <input type="text" className="searchinput" name="GPTquery" onmouseout="this.value = ''; this.blur();"  />
+                        </label>
+                    </form>
+                    {/* <i className="fas fa-search"></i> */}
+
+                </div>
+
+
+
                 <p>{gptQuery}</p>
             </div>
         </section>

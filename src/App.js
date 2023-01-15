@@ -12,6 +12,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <div className='MainBackground'></div>
       <div className='Content'>
         <SearchSection dataState={dataState} setDataState={setDataState}/>
         <ReplySection dataState={dataState} setPageState={setPageState}/>

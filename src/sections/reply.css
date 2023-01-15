@@ -1,6 +1,9 @@
 
 .replyBackground {
-    min-height: 20vh;
+
+    border: 1px solid blue;
+    
+    min-height: 20%;
     
     display: flex;
     flex-direction: column;
@@ -9,6 +12,7 @@
 }
 
 .replySection {
+    border: 2px solid blue;
 
     width: 40vw;
 
