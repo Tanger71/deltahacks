@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import './reply.css';
+import './search.css';
 
 export default function GetKey({setAiKey, setPageState}){
     function handleSubmit(e){
@@ -12,10 +12,11 @@ export default function GetKey({setAiKey, setPageState}){
     }
 
     return (
-        <div className="searchbox">
+        <div className="searchbox searchSection">
             <form name="search" onSubmit={e => handleSubmit(e)}>
                 <label className='searchText'>
-                    Enter OpenAI private key:
+                    Enter OpenAI private key: 
+                    <br/>
                     <input type="text" className="searchinput" />
                 </label>
             </form>
