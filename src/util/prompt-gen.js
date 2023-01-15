@@ -10,9 +10,9 @@ function checkTopic(topic) {
 }
 
 
-function checkvalid (topic) {
-    (checkChars(topic));
-    (checkTopic(topic));
+function checkValid (topic) {
+    checkChars(topic);
+    checkTopic(topic);
 }
 
 
