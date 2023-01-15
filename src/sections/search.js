@@ -31,7 +31,7 @@ var chatGPT = require('../util/chatGPT');
 
 export default function SearchSection() {
 
-    const [gptQuery, setgptQuery] = useState("swim");
+    const [gptQuery, setgptQuery] = useState("");
 
     const callback = r => {
 
