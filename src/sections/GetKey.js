@@ -2,8 +2,7 @@ import React from 'react';
 // import { useState } from 'react';
 import './search.css';
 
-// import { setToken } from '../util/chatGPT';
-
+import { setToken } from '../util/chatGPT';
 const functions = require('../util/chatGPT');
 let { setToken } = functions
 
