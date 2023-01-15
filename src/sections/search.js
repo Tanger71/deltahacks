@@ -1,6 +1,8 @@
 import React , { useState }from 'react';
 import './search.css'
 
+var chatGPT = require('../util/chatGPT');
+
 // export class SearchSection extends React.Component {
 
 //     constructor(props) {
@@ -29,26 +31,43 @@ import './search.css'
 
 export default function SearchSection() {
 
-    const [gptQuery, setgptQuery] = useState("");
+    const [gptQuery, setgptQuery] = useState("swim");
 
-    function handleSubmit() {
-        setgptQuery("asd")
-        // console.log(typeof e)
+    const callback = r => {
+
+        console.log("callb")
+        //remove loading spinner
+        /// Do stuff with response HERE
+        var result = r;
+        //add react obj to screen
+
+        console.log(result)
     }
+    
+    function handleSubmit(e) {
+        console.log("handle sub 1")
+
+        e.preventDefault();
+        setgptQuery(e.target[0].value)
+        chatGPT.getLesson(callback, e.target[0].value)
+
+        console.log("handle sub 2")
+    }
+    
+    console.log("end initial")
 
     return (
         <section className='searchBackground'>
             <div className='searchSection'>
-                <form onSubmit={handleSubmit}>
+                {/* <form onSubmit={e => handleSubmit(e)}> */}
+                <form onSubmit={ e => handleSubmit(e)}>
                     <label>
                         I want to teach:
-                        <input type="text" name="GPTquery" />
+                        <input type="text" name="GPTquery"/>
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-
                 <p>{gptQuery}</p>
-
             </div>
         </section>
     )
