@@ -29,9 +29,9 @@ var chatGPT = require('../util/chatGPT');
 //     }
 // }
 
-export default function SearchSection() {
+export default function SearchSection({setDataState}) {
 
-    const [gptQuery, setgptQuery] = useState("swim");
+    const [gptQuery, setgptQuery] = useState("");
 
     const callback = r => {
 
@@ -42,6 +42,7 @@ export default function SearchSection() {
         //add react obj to screen
 
         console.log(result)
+        setDataState(dataState => [...dataState, result])
     }
     
     function handleSubmit(e) {
