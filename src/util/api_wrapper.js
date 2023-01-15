@@ -3,12 +3,11 @@ const { Configuration, openAIApi, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
     // apiKey: process.env.OPEN_AI_APIKEY,
-    apiKey: "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",
+    apiKey: "",
 });
 const openai = new OpenAIApi(configuration);
 
-exports.queryChatGPT = async function(prompt) {
-
+exports.queryChatGPT = async function (prompt) {
     const gptResponse = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
@@ -20,5 +19,4 @@ exports.queryChatGPT = async function(prompt) {
     })
 
     return gptResponse["data"]["choices"][0]["text"];
-
 }

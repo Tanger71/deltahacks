@@ -33,7 +33,7 @@ var chatGPT = require('../util/chatGPT');
 //     }
 // }
 
-export default function SearchSection({ setDataState }) {
+export default function SearchSection({setDataState, setTopic}) {
 
     const [gptQuery, setgptQuery] = useState("");
 
@@ -57,7 +57,7 @@ export default function SearchSection({ setDataState }) {
         e.preventDefault();
         setgptQuery(e.target[0].value)
         chatGPT.getLesson(callback, e.target[0].value)
-
+        setTopic(e.target[0].value);
         console.log("handle sub 2")
     }
 
