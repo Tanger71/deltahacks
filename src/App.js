@@ -14,7 +14,7 @@ export default function App() {
     <div className="App">
       <div className='Content'>
         <SearchSection dataState={dataState} setDataState={setDataState}/>
-        <ReplySection dataState={dataState} setPageState={setPageState}/>
+        <ReplySection dataState={dataState} setDataState={setDataState} setPageState={setPageState}/>
       </div>
     </div>
   );
