@@ -37,9 +37,12 @@ const callback = r => {
     var result = r;
 
     //add react obj to screen
-    console.log(parse.responseParse(result));
+    console.log(result);
 }
 
-asynchronousFunction(callback)
+chatGPT.getLesson(callback, "play league")
 console.log("loading...");
 // add loading spinner
+
+
+
