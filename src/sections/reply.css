@@ -53,10 +53,14 @@
     padding: 5px;
 }
 
+.replyObjList {
+    list-style-type: "▹ ";
+}
+
 .replySingleText li::before {
 
-    content: "▹ ";
-    /* content: "a    "; */
+    /* content: "▹ "; */
+    content: "a    ";
     color: rgb(223, 223, 223);
     position: relative;
     /* right: 10px; */

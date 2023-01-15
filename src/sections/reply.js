@@ -47,14 +47,15 @@ export default function ReplySection({ dataState, setDataState, setPageState, to
                             :
                             <p className='qHead'>{topic}: more...</p>
                         }
-                        
-                        {data.list.map((dataString, index) => (
-                            <Fade direction='up' cascade delay={500 + index * 250} triggerOnce={true}>
-                                <div className='replySingleText' key={(1 + index) * 10} onClick={() => getStep(callback, topic, dataString)} >
-                                    {dataString}
-                                </div>
-                            </Fade>
-                        ))}
+                        <ul className='replyObjList'>
+                            {data.list.map((dataString, index) => (
+                                <Fade direction='up' cascade delay={500 + index * 250} triggerOnce={true}>
+                                    <li className='replySingleText' key={(1 + index) * 10} onClick={() => getStep(callback, topic, dataString)} >
+                                        {dataString}
+                                    </li>
+                                </Fade>
+                            ))}
+                        </ul>
                     </div>
                 ))}
             </div>
