@@ -48,7 +48,8 @@ export default function SearchSection({setDataState, setTopic}) {
         //add react obj to screen
 
         console.log(result)
-        setDataState(dataState => [...dataState, result])
+        // setDataState(dataState => [...dataState, result])
+        setDataState(dataState => [result])
     }
 
     function handleSubmit(e) {
@@ -59,6 +60,8 @@ export default function SearchSection({setDataState, setTopic}) {
         chatGPT.getLesson(callback, e.target[0].value)
         setTopic(e.target[0].value);
         console.log("handle sub 2")
+
+        
     }
 
     // /^[a-zA-Z' ]+$/
@@ -67,6 +70,7 @@ export default function SearchSection({setDataState, setTopic}) {
             setvalidinput(e.target.value);
         }
     }
+
 
     console.log("end initial")
 
