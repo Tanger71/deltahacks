@@ -1,7 +1,15 @@
 import React from 'react';
+import { getLesson } from '../util/chatGPT'; 
 import './reply.css'
 
-export default function ReplySection({dataState, setPageState}){
+export default function ReplySection({dataState, setDataState, setPageState}){
+
+    const callback = r => {
+        console.log("callb");
+        var result = r;
+        console.log(result);
+        setDataState(dataState => [...dataState, result]);
+    }
 
     return (
         <section className='replyBackground'>
@@ -10,7 +18,7 @@ export default function ReplySection({dataState, setPageState}){
                     <div key={index}>
                         <>{data.prompt}</>
                         {data.list.map((dataString, index) => (
-                            <div key={index}>{dataString}</div>
+                            <div key={index} onClick={() => getLesson(callback, dataString)} >{dataString}</div>
                         ))}
                     </div>
                 ))}
