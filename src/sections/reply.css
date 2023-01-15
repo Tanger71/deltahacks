@@ -1,0 +1,45 @@
+
+.replyBackground {
+
+    /* border: 1px solid blue; */
+    
+    min-height: 20%;
+    max-height: 80vh;
+
+    padding-top: 20px;
+
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.replySection {
+    /* border: 2px solid blue; */
+
+    background: rgba(218, 223, 225);
+    opacity: 0.85;
+    border-radius: 20px;
+    width: 90vw;
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    font-size: 1.6em;
+
+}
+
+.replyStep {
+    /* border: 5px solid red; */
+    text-align: left;
+    padding: 6px;
+}
+.replyStep:hover {
+    /* border: 5px solid red; */
+}
+
+.replySingleText:hover {
+    background-color: darkgray;
+}
