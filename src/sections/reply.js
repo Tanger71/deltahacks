@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import { getStep } from '../util/chatGPT';
 import './reply.css'
 
 import { Fade } from "react-awesome-reveal";
 import { fontFamily } from '@mui/system';
+
+// import { getStep } from '../util/chatGPT';
+const functions = require('../util/chatGPT');
+let { getStep } = functions
+
 
 export default function ReplySection({ dataState, setDataState, setPageState, topic }) {
 

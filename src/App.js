@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import SearchSection  from './sections/search';
+import SearchSection from './sections/search';
 import ReplySection from './sections/reply';
 import { useState } from 'react';
 import GetKey from './sections/GetKey';
@@ -19,10 +19,10 @@ export default function App() {
       <div className='Content'>
         {pageState === "nokey" ?
           <GetKey setAiKey={setAiKey} setPageState={setPageState} />
-        :
-          <> 
-            <SearchSection dataState={dataState} setDataState={setDataState} setTopic={setTopic}/>
-            <ReplySection dataState={dataState} setDataState={setDataState} setPageState={setPageState} topic={topic}/>
+          :
+          <>
+            <SearchSection dataState={dataState} setDataState={setDataState} setTopic={setTopic} />
+            <ReplySection dataState={dataState} setDataState={setDataState} setPageState={setPageState} topic={topic} />
           </>
         }
       </div>
