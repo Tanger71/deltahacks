@@ -27,7 +27,24 @@ exports.generate = function (topic) {
     var prompt = "";
     prompt += "How would I teach someone to ";
     prompt += topic;
-    prompt += " in steps?";
+    prompt += " in a numbered list? each beginning with the word 'Teach'";
+
+    return prompt;
+}
+
+/**
+ * @param topic str
+ * 
+ * @returns str that is prompt
+ */
+exports.generateStep = function (topic, step) {
+    checkValid(topic);
+
+    var prompt = "";
+    prompt += "In " + topic;
+    prompt += ", How do I ";
+    prompt += step;
+    prompt += "?";
 
     return prompt;
 }
