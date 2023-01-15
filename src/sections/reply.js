@@ -5,8 +5,10 @@ import { Fade } from "react-awesome-reveal";
 // import { fontFamily } from '@mui/system';
 
 // import { getStep } from '../util/chatGPT';
-const functions = require('../util/chatGPT');
-let { getStep } = functions
+// const functions = require('../util/chatGPT');
+// let { getStep } = functions
+
+const { getStep } = require('../util/chatGPT');
 
 
 export default function ReplySection({ dataState, setDataState, setPageState, topic }) {

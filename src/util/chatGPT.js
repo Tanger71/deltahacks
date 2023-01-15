@@ -2,6 +2,9 @@ var promptGen = require('./prompt-gen');
 var parseResponse = require('./parse-response');
 var api = require('./api_wrapper');
 
+// var module = new Module();
+// var exports = module.exports;
+
 /**
  * 
  * @param function callback to recieve JSON obj when its ready
