@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './search.css'
 
 import SearchIcon from '@mui/icons-material/Search';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 var chatGPT = require('../util/chatGPT');
 
@@ -35,6 +37,8 @@ export default function SearchSection({ setDataState }) {
 
     const [gptQuery, setgptQuery] = useState("");
 
+    const [validinput, setvalidinput] = useState("");
+
     const callback = r => {
 
         console.log("callb")
@@ -57,12 +61,19 @@ export default function SearchSection({ setDataState }) {
         console.log("handle sub 2")
     }
 
+    // /^[a-zA-Z' ]+$/
+    function onChangeTagInput(e) {
+        if (e.target.value.match("^[a-zA-Z' ]*$") != null) {
+            setvalidinput(e.target.value);
+        }
+    }
+
     console.log("end initial")
 
     return (
         <section className='searchBackground'>
             <div className='searchSection'>
-                <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css"/>
+                <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css" />
 
                 {/* <form onSubmit={e => handleSubmit(e)}>
                     <label>
@@ -74,18 +85,20 @@ export default function SearchSection({ setDataState }) {
 
                 <div className="searchbox">
                     <form name="search" onSubmit={e => handleSubmit(e)}>
-                        <label>
+                        <label className='searchText'>
                             I want to teach:
-                            <input type="text" className="searchinput" name="GPTquery" onmouseout="this.value = ''; this.blur();"  />
+                            <input type="text" value={validinput} className="searchinput" name="GPTquery" onChange={(e) => onChangeTagInput(e)} />
+                            {/* onMouseOut="this.value = ''; this.blur();" */}
                         </label>
                     </form>
                     {/* <i className="fas fa-search"></i> */}
+                    <FontAwesomeIcon icon={faSearch} className="icon" />
 
                 </div>
 
 
 
-                <p>{gptQuery}</p>
+                {/* <p>{gptQuery}</p> */}
             </div>
         </section>
     )
