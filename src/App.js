@@ -10,7 +10,6 @@ export default function App() {
   const [pageState, setPageState] = useState("nokey");
   const [dataState, setDataState] = useState([]); // sample:[{prompt: "", list: []}, {prompt: "", list: []}]
   const [topic, setTopic] = useState(""); // sample:[{prompt: "", list: []}, {prompt: "", list: []}]
-  const [aiKey, setAiKey] = useState("");
 
 
   return (
@@ -18,7 +17,7 @@ export default function App() {
       <div className='MainBackground'></div>
       <div className='Content'>
         {pageState === "nokey" ?
-          <GetKey setAiKey={setAiKey} setPageState={setPageState} />
+          <GetKey setPageState={setPageState} />
         :
           <> 
             <SearchSection dataState={dataState} setDataState={setDataState} setTopic={setTopic}/>
