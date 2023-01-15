@@ -1,6 +1,6 @@
 function checkChars(topic) {
     if (!topic) {throw new Error("User cannot input an empty string.")}
-    let allowedChars = /^[a-z]+$/i.test(topic);
+    let allowedChars =  /^[a-zA-Z' ]+$/.test(topic);
     if (!allowedChars) {throw new Error("User used invalid characters.")}
     return 0;
 }
@@ -27,7 +27,7 @@ exports.generate = function (topic) {
     var prompt = "";
     prompt += "How would I teach someone to ";
     prompt += topic;
-    prompt += " in a numbered list? each beginning with the word 'Teach'";
+    prompt += " in a numbered list? each sentence beginning with a verb";
 
     return prompt;
 }
@@ -44,7 +44,7 @@ exports.generateStep = function (topic, step) {
     prompt += "In " + topic;
     prompt += ", How do I ";
     prompt += step;
-    prompt += "?";
+    prompt += "in a numbered list? each sentence beginning with a verb";
 
     return prompt;
 }

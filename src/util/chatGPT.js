@@ -13,7 +13,7 @@ exports.getLesson = async function (callback, topic){
 
     var r = await api.queryChatGPT(prompt);
 
-    callback(parseResponse.packageResponse(prompt, r));
+    callback(parseResponse.packageLessonResponse(prompt, r));
 }
 
 
@@ -28,5 +28,5 @@ exports.getStep = async function (callback, topic, step){
 
     var r = await api.queryChatGPT(prompt);
 
-    callback(parseResponse.packageResponse(prompt, r));
+    callback(parseResponse.packageStepResponse(prompt, r));
 }
