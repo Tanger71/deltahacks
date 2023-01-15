@@ -31,15 +31,15 @@ export default function SearchSection() {
 
     const [gptQuery, setgptQuery] = useState("");
 
-    function handleSubmit() {
-        setgptQuery("asd")
-        // console.log(typeof e)
+    function handleSubmit(e) {
+        console.log(e.target[0].value);
+        e.preventDefault();
     }
 
     return (
         <section className='searchBackground'>
             <div className='searchSection'>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(e) => {handleSubmit(e)}}>
                     <label>
                         I want to teach:
                         <input type="text" name="GPTquery" />
