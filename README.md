@@ -1,3 +1,11 @@
+<h1 align="center">
+  Teach-AI
+</h1>
+<p align="center">
+  The first iteration of <a href="https://teach-ai.netlify.app/" target="_blank">Teach-AI.app</a> built with React.js leveraging Davinci Engine.
+</p>
+
+
 # TeachAI
 _A web application that enables everyone to be teachers._
 
