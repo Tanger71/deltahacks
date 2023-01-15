@@ -1,7 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import './search.css';
-import { setToken } from '../util/chatGPT';
+
+// import { setToken } from '../util/chatGPT';
+const functions = require('../util/chatGPT');
+let { setToken } = functions
 
 export default function GetKey({setAiKey, setPageState}){
 
@@ -21,9 +24,9 @@ export default function GetKey({setAiKey, setPageState}){
         <div className="searchbox searchSection">
             <form name="search" onSubmit={e => handleSubmit(e)}>
                 <label className='searchText'>
-                    Enter OpenAI private key: 
+                    Enter OpenAI key: 
                     <br/>
-                    <input type="text" className="searchinput" />
+                    <input type="text" className="searchinput" style={{marginTop: "10px"}} />
                 </label>
             </form>
          </div>

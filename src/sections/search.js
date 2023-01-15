@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './search.css'
 
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -41,7 +41,7 @@ export default function SearchSection({setDataState, setTopic}) {
 
     const callback = r => {
 
-        console.log("callb")
+        console.log(gptQuery)
         //remove loading spinner
         /// Do stuff with response HERE
         var result = r;
@@ -61,7 +61,7 @@ export default function SearchSection({setDataState, setTopic}) {
         setTopic(e.target[0].value);
         console.log("handle sub 2")
 
-        
+        setDataState([])
     }
 
     // /^[a-zA-Z' ]+$/
@@ -88,7 +88,7 @@ export default function SearchSection({setDataState, setTopic}) {
                 </form> */}
 
                 <div className="searchbox">
-                    <form name="search" onSubmit={e => handleSubmit(e)}>
+                    <form name="search" onSubmit={e => handleSubmit(e)} autoComplete="off" action="...">
                         <label className='searchText'>
                             I want to teach:
                             <input type="text" value={validinput} className="searchinput" name="GPTquery" onChange={(e) => onChangeTagInput(e)} />
