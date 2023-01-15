@@ -6,11 +6,11 @@ function responseParse (input, isLesson) {
 
     if (isLesson) {
         for (var i = 0; i < filteredSteps.length; i++) {
-            if (i <= 9) {
+            if (i < 9) {
                 filteredSteps[i] = filteredSteps[i].slice(3, filteredSteps[i].length);
             }
             else {
-                filteredSteps[i] = filteredSteps[i].slice(5, filteredSteps[i].length);
+                filteredSteps[i] = filteredSteps[i].slice(4, filteredSteps[i].length);
             }
         }
     }
