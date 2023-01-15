@@ -30,3 +30,7 @@ exports.getStep = async function (callback, topic, step){
 
     callback(parseResponse.packageStepResponse(prompt, r));
 }
+
+exports.setToken = function (token){
+    api.setToken(token);
+}
