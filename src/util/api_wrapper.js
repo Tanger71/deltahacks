@@ -1,11 +1,19 @@
 const { Configuration, openAIApi, OpenAIApi } = require("openai");
 // require('dotenv').config();
 
-const configuration = new Configuration({
+var configuration = new Configuration({
     // apiKey: process.env.OPEN_AI_APIKEY,
     apiKey: "",
 });
-const openai = new OpenAIApi(configuration);
+var openai = new OpenAIApi(configuration);
+
+exports.setToken = function (token) {
+    configuration = new Configuration({
+        // apiKey: process.env.OPEN_AI_APIKEY,
+        apiKey: token,
+    });
+    openai = new OpenAIApi(configuration);
+}
 
 exports.queryChatGPT = async function (prompt) {
     const gptResponse = await openai.createCompletion({
