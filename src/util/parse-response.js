@@ -4,6 +4,15 @@ function responseParse (input) {
 
     const filteredSteps = steps.filter(sentence => sentence != '');
 
+    for (var i = 0; i < filteredSteps.length; i++) {
+        if (i <= 9) {
+            filteredSteps[i] = filteredSteps[i].slice(3, filteredSteps[i].length);
+        }
+        else {
+            filteredSteps[i] = filteredSteps[i].slice(5, filteredSteps[i].length);
+        }
+    }
+
     return filteredSteps;
 }
 
