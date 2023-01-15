@@ -1,4 +1,6 @@
-const { Configuration, openAIApi, OpenAIApi } = require("openai");
+const { Configuration, OpenAIApi } = require("openai");
+// const { Configuration, openAIApi, OpenAIApi } = require("openai");
+
 // require('dotenv').config();
 
 var configuration = new Configuration({

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './search.css'
 
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -41,7 +41,7 @@ export default function SearchSection({setDataState, setTopic}) {
 
     const callback = r => {
 
-        console.log("callb")
+        console.log(gptQuery)
         //remove loading spinner
         /// Do stuff with response HERE
         var result = r;

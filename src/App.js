@@ -12,6 +12,7 @@ export default function App() {
   const [topic, setTopic] = useState(""); // sample:[{prompt: "", list: []}, {prompt: "", list: []}]
   const [aiKey, setAiKey] = useState("");
 
+  console.log(aiKey);
 
   return (
     <div className="App">

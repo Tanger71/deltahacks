@@ -2,7 +2,7 @@ function responseParse (input, isLesson) {
 
     const steps = input.split('\n');
 
-    const filteredSteps = steps.filter(sentence => sentence != '');
+    const filteredSteps = steps.filter(sentence => sentence !== '');
 
     if (isLesson) {
         for (var i = 0; i < filteredSteps.length; i++) {
