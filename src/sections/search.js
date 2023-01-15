@@ -1,5 +1,9 @@
-import React , { useState }from 'react';
+import React, { useState } from 'react';
 import './search.css'
+
+import SearchIcon from '@mui/icons-material/Search';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 var chatGPT = require('../util/chatGPT');
 
@@ -33,6 +37,8 @@ export default function SearchSection({setDataState, setTopic}) {
 
     const [gptQuery, setgptQuery] = useState("");
 
+    const [validinput, setvalidinput] = useState("");
+
     const callback = r => {
 
         console.log("callb")
@@ -44,7 +50,7 @@ export default function SearchSection({setDataState, setTopic}) {
         console.log(result)
         setDataState(dataState => [...dataState, result])
     }
-    
+
     function handleSubmit(e) {
         console.log("handle sub 1")
 
@@ -54,21 +60,45 @@ export default function SearchSection({setDataState, setTopic}) {
         setTopic(e.target[0].value);
         console.log("handle sub 2")
     }
-    
+
+    // /^[a-zA-Z' ]+$/
+    function onChangeTagInput(e) {
+        if (e.target.value.match("^[a-zA-Z' ]*$") != null) {
+            setvalidinput(e.target.value);
+        }
+    }
+
     console.log("end initial")
 
     return (
         <section className='searchBackground'>
             <div className='searchSection'>
-                {/* <form onSubmit={e => handleSubmit(e)}> */}
-                <form onSubmit={ e => handleSubmit(e)}>
+                <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css" />
+
+                {/* <form onSubmit={e => handleSubmit(e)}>
                     <label>
                         I want to teach:
-                        <input type="text" name="GPTquery"/>
+                        <input type="text" name="GPTquery" />
                     </label>
                     <input type="submit" value="Submit" />
-                </form>
-                <p>{gptQuery}</p>
+                </form> */}
+
+                <div className="searchbox">
+                    <form name="search" onSubmit={e => handleSubmit(e)}>
+                        <label className='searchText'>
+                            I want to teach:
+                            <input type="text" value={validinput} className="searchinput" name="GPTquery" onChange={(e) => onChangeTagInput(e)} />
+                            {/* onMouseOut="this.value = ''; this.blur();" */}
+                        </label>
+                    </form>
+                    {/* <i className="fas fa-search"></i> */}
+                    <FontAwesomeIcon icon={faSearch} className="icon" />
+
+                </div>
+
+
+
+                {/* <p>{gptQuery}</p> */}
             </div>
         </section>
     )
