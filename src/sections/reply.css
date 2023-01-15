@@ -20,6 +20,7 @@
     /* border: 2px solid blue; */
 
     background: rgba(218, 223, 225);
+    opacity: 0.75;
     border-radius: 20px;
     width: 60vw;
 
@@ -39,5 +40,5 @@
 }
 
 .replySingleText:hover {
-    color: blue;
+    background-color: darkgray;
 }
