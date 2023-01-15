@@ -1,5 +1,6 @@
 # TeachAI
 _A web application that enables everyone to be teachers._
+
 ![logo](https://user-images.githubusercontent.com/24414992/212554091-329cc453-0518-47f5-a763-1a5ad99275a1.png)
 
 **Sawyer Tang, Oleg Glotov, Allan Fang, Ryan Yeh**
