@@ -37,9 +37,9 @@ export default function ReplySection({ dataState, setDataState, setPageState, to
                     <div key={index + 1} className='replyStep' ref={messageRef}>
                         {/* <>{data.prompt}</> */}
                         {index === 0 ?
-                            <p className='qHead'>How do I teach {topic}</p>
+                            <p className='qHead'>How do I teach {topic}?</p>
                             :
-                            <p className='qHead'>{topic}: {data.prompt}</p>
+                            <p className='qHead'>{topic}: more...</p>
                         }
                         
                         {data.list.map((dataString, index) => (
