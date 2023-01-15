@@ -6,8 +6,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-exports.queryChatGPT = async function(prompt) {
-
+exports.queryChatGPT = async function (prompt) {
     const gptResponse = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
@@ -19,5 +18,4 @@ exports.queryChatGPT = async function(prompt) {
     })
 
     return gptResponse["data"]["choices"][0]["text"];
-
 }

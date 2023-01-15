@@ -1,4 +1,4 @@
-responseParse = function(input) {
+function responseParse (input) {
     const steps = input.split('\n');
 
     const filteredSteps = steps.filter(sentence => sentence != '');
@@ -6,7 +6,7 @@ responseParse = function(input) {
     return filteredSteps;
 }
 
-exports.packageResponse = function (p, list){
+exports.packageResponse = function (p, list) {
     var pack = {};
     pack.prompt = p;
     pack.list = responseParse(list);
