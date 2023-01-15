@@ -1,7 +1,7 @@
 function checkChars(topic) {
     if (!topic) {throw new Error("User cannot input an empty string.")}
     let allowedChars = /^[a-z]+$/i.test(topic);
-    if (allowedChars) {throw new Error("User used invalid characters.")}
+    if (!allowedChars) {throw new Error("User used invalid characters.")}
     return 0;
 }
 
@@ -11,7 +11,7 @@ function checkTopic(topic) {
 
 
 function checkValid (topic) {
-    checkChars(topic);
+    //checkChars(topic);
     checkTopic(topic);
 }
 
