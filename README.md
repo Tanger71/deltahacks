@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1063638694977863774/1063916699033796628/Untitled-2.png"/>
+</p>
 <h1 align="center">
   Teach-AI
 </h1>
