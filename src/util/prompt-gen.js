@@ -11,7 +11,7 @@ function checkTopic(topic) {
 
 
 function checkValid (topic) {
-    //checkChars(topic);
+    checkChars(topic);
     checkTopic(topic);
 }
 
