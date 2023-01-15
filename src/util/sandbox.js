@@ -40,7 +40,7 @@ const callback = r => {
     console.log(result);
 }
 
-chatGPT.getLesson(callback, "play league")
+chatGPT.getStep(callback, "play league", "Emphasize the importance of adaptation and flexibility, to be able to change strategies and adapt to different situations in the game")
 console.log("loading...");
 // add loading spinner
 
