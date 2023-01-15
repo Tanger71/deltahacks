@@ -88,7 +88,7 @@ export default function SearchSection({setDataState, setTopic}) {
                 </form> */}
 
                 <div className="searchbox">
-                    <form name="search" onSubmit={e => handleSubmit(e)} autocomplete="off" action="...">
+                    <form name="search" onSubmit={e => handleSubmit(e)} autoComplete="off" action="...">
                         <label className='searchText'>
                             I want to teach:
                             <input type="text" value={validinput} className="searchinput" name="GPTquery" onChange={(e) => onChangeTagInput(e)} />

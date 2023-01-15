@@ -26,7 +26,7 @@ export default function GetKey({setAiKey, setPageState}){
                 <label className='searchText'>
                     Enter OpenAI key: 
                     <br/>
-                    <input type="text" className="searchinput" />
+                    <input type="text" className="searchinput" style={{marginTop: "10px"}} />
                 </label>
             </form>
          </div>
